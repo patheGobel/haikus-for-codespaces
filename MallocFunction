@@ -1,0 +1,72 @@
+/*#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int **T;
+    T = (int **)malloc(8*sizeof(int *));
+    if(T == NULL){
+        exit(0);
+    }
+    for(int i=0;i<8;i++){
+        printf("Donner un nombre\n");
+        scanf("%d",(*T+i));      
+    }
+    printf("###############\n");
+    for(int j=0;j<8;j++){ 
+        printf("%d\n",*(*T+j));
+    }
+    free(T);
+    return 0;
+}*/
+
+/*
+#include<stdio.h>
+#include<stdlib.h>
+#define MAXROW 3
+#define MAXCOL 4
+int main()
+{
+    int **T, i, j;
+    T= (int **) malloc(12 * sizeof(int*));
+ if(T == NULL){
+        exit(0);
+    }
+    for(int i=0;i<MAXCOL;i++){
+        printf("Donner un nombre\n");
+        scanf("%d",(*T+i));      
+    }
+    printf("###############\n");
+    for(int j=0;j<MAXCOL;j++){ 
+        printf("%d\n",*(*T+j));
+    }
+    free(T);
+    return 0;
+}
+*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAXROW 3
+#define MAXCOL 4
+int main()
+{
+    int (*T)[MAXCOL];
+    T = (int (*) [MAXCOL]) malloc( MAXROW *sizeof (*T));
+    printf("%ld, %ld\n", sizeof(T), sizeof(*T));
+
+ if(T == NULL){
+        exit(0);
+    }
+    for(int i=0;i<12;i++){
+        printf("Donner un nombre\n");
+        scanf("%d",(*T+i));      
+    }
+    printf("###############\n");
+    for(int j=0;j<12;j++){ 
+        printf("%d\n",*(*T+j));
+    }
+    free(T);
+
+
+    return 0;
+}
